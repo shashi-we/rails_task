@@ -1,0 +1,40 @@
+
+<h1>Header: Failed Charges</h1>
+<div class='failed'>
+<%@failed_charges.flatten.each do |fail|%>
+  Customer Name: <%= fail.customer.first_name%></br>
+  Amount : <%= fail.amount%></br>
+  Failure Date : <%= fail.created_at%>
+</br></br>
+<%end%>
+</div>
+
+<h1>Header: Disputed Charges</h1>
+<div class='dispute'>
+<%@dispute_charges.flatten.each do |des|%>
+  Customer Name: <%= des.customer.first_name%></br>
+  Amount : <%= des.amount%></br>
+  Failure Date : <%= des.created_at%>
+</br></br>
+<%end%>
+</div>
+
+<h1>Successful: Successful Charges</h1>
+<div class='success'>
+<%@succesful_charges.flatten.each do |suc|%>
+  Customer Name: <%= suc.customer.first_name%></br>
+  Amount : <%= suc.amount%></br>
+  Failure Date : <%= suc.created_at%>
+</br></br>
+<%end%>
+</div>
+
+
+<style>
+.failed{
+	background-color: #FF0000;
+}
+.dispute{
+	background-color: #FF5400;
+}
+</style>
